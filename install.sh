@@ -105,6 +105,6 @@ then
             apt install python3-pip -y
         fi
 else
-    apt install python3
+    apt install python3 -y
     
 fi
