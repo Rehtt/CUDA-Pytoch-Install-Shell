@@ -92,7 +92,6 @@ then
 elif [ -s $python3"5" ]
 then
         if [ -s /usr/bin/pip3 ];then
-            apt install python3-pip -y
             pip3 install opencv-python
             pip3 install https://download.pytorch.org/whl/cu100/torch-1.1.0-cp35-cp35m-linux_x86_64.whl
             pip3 install https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp35-cp35m-linux_x86_64.whl
@@ -102,4 +101,10 @@ then
             else
                 echo "安装失败"
             fi
+        else
+            apt install python3-pip -y
+        fi
+else
+    apt install python3
+    
 fi
