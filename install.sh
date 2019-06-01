@@ -91,7 +91,7 @@ if ! [ -s /usr/local/cuda-10.0 ];then
 fi
 
 #检查python3是否安装
-if ! [ -s /usr/bin/python3 ] || ! [ -s /usr/bin/pip3 ];then
+if ! [ -s /usr/bin/python3 ] && ! [ -s /usr/bin/pip3 ];then
     apt install python3 -y
     apt install python3-pip -y
 fi
