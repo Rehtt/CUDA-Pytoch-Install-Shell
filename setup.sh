@@ -1,5 +1,10 @@
 #!/bin/bash
 
+##############
+#2019-6-13
+#by Rehtt
+##############
+
 if ! [ -r /root ];then
     echo "需要root权限执行该脚本"
     exit
@@ -126,10 +131,10 @@ pip_install(){
 }
 pip3 install https://download.pytorch.org/whl/cu100/torch-1.1.0-cp${v}-cp${v}m-linux_x86_64.whl
 pip3 install https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp${v}-cp${v}m-linux_x86_64.whl
-pip_name=(opencv-python cupy-cuda100 scikit-image torchnet)
+pip_name=(opencv-python cupy-cuda100 scikit-image torchnet jupyter)
 for name in ${pip_name[*]}
 do
     pip_install $name
 done
-
+jupyter notebook --generate-config
 ldconfig /usr/local/cuda-10.0/lib64/
